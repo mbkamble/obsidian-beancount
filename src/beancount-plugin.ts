@@ -60,7 +60,7 @@ export class ObsidianBeancountPlugin
     if (!amount) {
       throw new Error('Amount is required');
     }
-    if (isNaN(parseFloat(amount, 10))) {
+    if (isNaN(parseFloat(amount))) {
       throw new Error('Amount is not a number');
     }
     if (!currency) {
@@ -78,12 +78,12 @@ export class ObsidianBeancountPlugin
     }
     const res = `
     ${date} * ${message}
-      ${from} ${parseFloat(amount, 10).toFixed(2)} ${currency}
-      ${to} ${-parseFloat(amount, 10).toFixed(2)} ${currency}
+      ${from} ${parseFloat(amount).toFixed(2)} ${currency} ;mbk2
+      ${to} ${-parseFloat(amount).toFixed(2)} ${currency}
               `.trim();
     if (fileToSave instanceof TFile) {
       const old = await this.app.vault.read(fileToSave);
-      await this.app.vault.modify(fileToSave, old + "\n\n" + res);
+      await this.app.vault.modify(fileToSave, old + "\n;mbk1\n" + res);
       await this.updateSetting('lastTransaction', transaction);
       new Notice('Transaction saved');
     } else {
