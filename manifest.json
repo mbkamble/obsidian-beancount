@@ -4,6 +4,6 @@
   "mainAppVersion": "0.15.0",
   "version": "0.3.0",
   "description": "Save beancount transaction in obsidian",
-  "author": "HamsterBase",
-  "authorUrl": "https://github.com/hamsterbase/obsidian-beancount"
+    "author": "MilindKamble",
+    "authorUrl": "https://github.com/mbkamble/obsidian-beancount"
 }
