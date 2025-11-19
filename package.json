@@ -2,8 +2,8 @@
   "name": "obsidian-beancount",
   "version": "99.99.99",
   "main": "index.js",
-  "repository": "git@github.com:hamsterbase/obsidian-beancount.git",
-  "author": "monster <monster@hamsterbase.com>",
+    "repository": "git@github.com:mbkamble/obsidian-beancount.git",
+    "author": "Milind Kamble",
   "license": "MIT",
   "scripts": {
     "build": "node script/build.js",
