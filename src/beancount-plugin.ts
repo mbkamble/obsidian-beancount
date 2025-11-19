@@ -78,12 +78,12 @@ export class ObsidianBeancountPlugin
     }
     const res = `
     ${date} * ${message}
-      ${from} ${parseFloat(amount).toFixed(2)} ${currency} ;mbk2
+      ${from} ${parseFloat(amount).toFixed(2)} ${currency}
       ${to} ${-parseFloat(amount).toFixed(2)} ${currency}
               `.trim();
     if (fileToSave instanceof TFile) {
       const old = await this.app.vault.read(fileToSave);
-      await this.app.vault.modify(fileToSave, old + "\n;mbk1\n" + res);
+      await this.app.vault.modify(fileToSave, old + "\n\n" + res);
       await this.updateSetting('lastTransaction', transaction);
       new Notice('Transaction saved');
     } else {
