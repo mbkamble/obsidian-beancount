@@ -83,7 +83,7 @@ export class ObsidianBeancountPlugin
               `.trim();
     if (fileToSave instanceof TFile) {
       const old = await this.app.vault.read(fileToSave);
-      await this.app.vault.modify(fileToSave, old + "\n\n" + res);
+      await this.app.vault.modify(fileToSave, old + "\n" + res);
       await this.updateSetting('lastTransaction', transaction);
       new Notice('Transaction saved');
     } else {
